@@ -1,0 +1,17 @@
+#!/bin/env sh
+
+which node &> /dev/null
+if [ $? -ne 0 ]; then
+    echo "NodeJS not found. Please install NodeJS to run the web server"
+    exit 1
+fi
+
+npm list -g | grep -q "live-server"
+
+if [ $? -ne 0 ]; then
+    echo "live-server npm package not found. Installing..."
+    npm i -g live-server
+    echo "live-server package installed."
+fi
+
+live-server
