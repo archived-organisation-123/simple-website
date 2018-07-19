@@ -1,4 +1,4 @@
-#!/bin/env sh
+#!/bin/bash
 
 which node &> /dev/null
 if [ $? -ne 0 ]; then
